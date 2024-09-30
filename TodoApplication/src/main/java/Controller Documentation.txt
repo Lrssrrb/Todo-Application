@@ -1,0 +1,108 @@
+Class: Controller
+
+
+1. Add a new task
+HTTP Method: POST
+Path: /
+Method: addTask
+Arguments:
+@RequestBody String description – The description of the new task.
+Return Type: ResponseEntity<Task>
+Response Codes:
+201 (Created): Task created successfully.
+Description: Adds a new task using the provided description.
+
+
+
+2. Mark a task as complete
+HTTP Method: PUT
+Path: /{id}/complete
+Method: markTaskAsComplete
+Arguments:
+@PathVariable long id – The ID of the task to mark as complete.
+Return Type: ResponseEntity<String>
+Response Codes:
+200 (OK): Task successfully marked as complete.
+404 (Not Found): Task with the given ID not found.
+Description: Marks the task with the given ID as complete.
+
+
+
+3. Remove a task
+HTTP Method: DELETE
+Path: /{id}
+Method: removeTask
+Arguments:
+@PathVariable long id – The ID of the task to remove.
+Return Type: ResponseEntity<String>
+Response Codes:
+200 (OK): Task successfully removed.
+404 (Not Found): Task with the given ID not found.
+Description: Removes the task with the specified ID.
+
+
+
+4. View all tasks
+HTTP Method: GET
+Path: /
+Method: getAllTasks
+Arguments: None
+Return Type: List<Task>
+Response Codes:
+200 (OK): Successfully retrieved all tasks.
+Description: Retrieves all tasks stored in memory.
+
+
+
+5. Add a new task (Database)
+HTTP Method: POST
+Path: /db
+Method: addTaskDb
+Arguments:
+@RequestBody String description – The description of the new task.
+Return Type: ResponseEntity<Task>
+Response Codes:
+201 (Created): Task created successfully.
+Description: Adds a new task to the database with the provided description.
+
+
+
+6. Mark a task as complete (Database)
+HTTP Method: PUT
+Path: /db/{id}/complete
+Method: markTaskAsCompleteDb
+Arguments:
+@PathVariable long id – The ID of the task to mark as complete.
+Return Type: ResponseEntity<String>
+Response Codes:
+200 (OK): Task successfully marked as complete.
+404 (Not Found): Task with the given ID not found.
+Description: Marks the task with the given ID as complete in the database.
+
+
+
+7. Remove a task (Database)
+HTTP Method: DELETE
+Path: /db/{id}
+Method: removeTaskDb
+Arguments:
+@PathVariable long id – The ID of the task to remove.
+Return Type: ResponseEntity<String>
+Response Codes:
+200 (OK): Task successfully removed.
+404 (Not Found): Task with the given ID not found.
+Description: Removes the task from the database with the given ID.
+
+
+
+8. View all tasks (Database)
+HTTP Method: GET
+Path: /db
+Method: getAllTasksDb
+Arguments: None
+Return Type: List<Task>
+Response Codes:
+200 (OK): Successfully retrieved all tasks.
+Description: Retrieves all tasks from the database.
+
+

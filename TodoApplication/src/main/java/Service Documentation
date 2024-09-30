@@ -1,0 +1,61 @@
+Class: ServicesImpl
+This service provides the business logic for managing tasks both in memory and in the database.
+
+1. Get all tasks (In-Memory)
+Method: getAllTasks
+Arguments: None
+Return Type: List<Task>
+Description: Returns a list of all tasks stored in memory.
+2. Get task by ID (In-Memory)
+Method: getTaskById
+Arguments:
+long id – The ID of the task to retrieve.
+Return Type: Optional<Task>
+Description: Returns a task from the in-memory storage if it exists, wrapped in an Optional.
+3. Add a task (In-Memory)
+Method: addTask
+Arguments:
+String description – The description of the new task.
+Return Type: Task
+Description: Creates a new task with the given description and stores it in memory.
+4. Mark task as complete (In-Memory)
+Method: markTaskAsComplete
+Arguments:
+long id – The ID of the task to mark as complete.
+Return Type: boolean
+Description: Marks the task with the given ID as complete in memory. Returns true if successful, false otherwise.
+5. Remove a task (In-Memory)
+Method: removeTask
+Arguments:
+long id – The ID of the task to remove.
+Return Type: boolean
+Description: Removes the task with the given ID from memory. Returns true if successful, false otherwise.
+6. Get all tasks (Database)
+Method: getAllTasksDb
+Arguments: None
+Return Type: List<Task>
+Description: Retrieves all tasks from the database.
+7. Get task by ID (Database)
+Method: getTaskByIdDb
+Arguments:
+long id – The ID of the task to retrieve from the database.
+Return Type: Optional<Task>
+Description: Returns a task from the database if it exists, wrapped in an Optional.
+8. Add a task (Database)
+Method: addTaskDb
+Arguments:
+String description – The description of the new task.
+Return Type: Task
+Description: Adds a new task with the provided description to the database.
+9. Mark task as complete (Database)
+Method: markTaskAsCompleteDb
+Arguments:
+long id – The ID of the task to mark as complete.
+Return Type: boolean
+Description: Marks the task with the given ID as complete in the database. Returns true if successful, false otherwise.
+10. Remove a task (Database)
+Method: removeTaskDb
+Arguments:
+long id – The ID of the task to remove from the database.
+Return Type: boolean
+Description: Removes the task from the database with the given ID. Returns true if successful, false otherwise.
